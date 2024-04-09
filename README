@@ -2,3 +2,9 @@
 # ReadME
 
 Placeholder for more info later
+
+Rules to the game:
+- Player has to guess a word from a bank of words
+    - ??? where do these words come from
+    - ??? how will I store them?
+- First step of each turn is to guess a letter
