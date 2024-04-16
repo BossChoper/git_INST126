@@ -22,6 +22,5 @@ for index in range(10):
     roll_results.append(this_roll)
     #updating the roll dictionary to confirm the new role addition
     roll_counts[this_roll] += 1
-
 print(roll_results)
 print(roll_counts)
