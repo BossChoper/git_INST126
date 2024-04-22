@@ -49,6 +49,7 @@ def rerollOddDie():
 def isTupledOut():
     if practice_results[0] == practice_results[1] and practice_results[0] == practice_results[2]:
             print("All rolls are the same. Tupled out!")
+            #take away points, no points will be added
 
 #confirmation of final results
 print(practice_dictionary)
