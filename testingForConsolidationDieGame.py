@@ -1,5 +1,6 @@
 import random
 #Testing document
+#Assumes this is a two-sided die
 
 practice_results = []
 practice_dictionary = {1: 0, 2 : 0}
@@ -13,14 +14,17 @@ players = [1]
 #initial roll. Rolls all dies and stores in results list/dictionary
 for index in range(3):
     current_roll = random.choice(two_sided_die)
+    #below adds temporary roll results to the list
     practice_results.append(current_roll)
+    #below records the numbers rolled and their frequency
     practice_dictionary[current_roll] += 1
 
-#initial roll results
+#initial roll number tally
 print(practice_dictionary)
+#print final roll results
 print(practice_results)
 
-#checking if two rolls are the same
+#checking if two rolled numbers are the same
 if practice_results[0] == practice_results[1] or practice_results[1] == practice_results[2] or practice_results[0] == practice_results[2]:
         print("Two rolls are the same")
 
@@ -91,7 +95,7 @@ def highScore():
 def changeDieSides():
      two_sided_die
 
-#testing player dictionary
+#testing set player dictionary
 player_data = {"Player 1": (0, 1, 2),
                "Player 2": (0, 1, 2)}
 player_data["Player 1"]
@@ -105,6 +109,8 @@ def printAllPlayers():
 #print out each player and their associated items
 def printAllPlayerInfo():
     for player, points in player_data.items():
-     side1Points, side2Points, side3Points = points
-     print(f"{player} got {side1Points} for one side, {side2Points} for second side, {side3Points} for third side")
-     print(player)
+        side1Points, side2Points, side3Points = points
+        print(f"{player} got {side1Points} for one side, {side2Points} for second side, {side3Points} for third side")
+        print(player)
+
+printAllPlayerInfo()
