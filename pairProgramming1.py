@@ -1,30 +1,3 @@
-#github repo for Pair Programming Session 1 on April 16, 2024
-import os
-import random
-#each player takes a turn rolling dice, the goal is to get the highest number after
-# a few turns.
-#each player rolls dice three times during one turn
-
-die_sides = (1, 2, 3, 4, 5, 6)
-# above is a variable containing the sides of the die that can be rolled
-roll_counter = {1 : 0, 2 : 0, 3 : 0, 4: 0, 5 : 0, 6 : 0}
-# above is a counter to count the roll results depending on the number rolled
-win_total = 10 
-#above is the total for winning the game. It should be 50 
-random.choice(die_sides)
-
-roll_results = []
-
-print("Hello. Please start your turn by entering yes.")
-question1 = ("Enter yes to start, no to  wait")
-if question1 == "yes":
-    this_roll = random.choice(die_sides)
-    roll_results.append(this_roll)
-    print(roll_results)
-
-
-# April 11 INST 126 Practice (Die_Roll code)
-# Topic: 
 
 import random
 
@@ -49,3 +22,64 @@ for index in range(10):
     roll_counts[this_roll] += 1
 print(roll_results)
 print(roll_counts)
+
+#Restrictions:
+#Game will have one or more players
+#Players take turns rolling dice to score points or reach score
+#Each turn, one player rolls three dice
+#IF all dice are rolled with same number, "tupled out", ends turn
+#If two dice have same value, they are fixed and are not rolled again
+#Player can reroll any dice that is not fixed, until they stop or tuple out
+#When player stops, score points equal to total of three dice and end turn
+#If tupled out, turn ends and they get no points
+#Limit is 50 score or five turns
+#Display current score
+#Record scores for each game
+#Record high score/consistent score
+#Implement AI
+#Ability to change number of sides
+#Add rules for special scoring
+
+practice_results = []
+practice_dictionary = {1: 0, 2 : 0}
+two_sided_die = (1, 2)
+
+#turn 1 for player 1
+turn = 0
+players = [1]
+
+for index in range(3):
+    current_roll = random.choice(two_sided_die)
+    practice_results.append(current_roll)
+    practice_dictionary[current_roll] += 1
+print(practice_dictionary)
+print(practice_results)
+
+#Testing player count
+#question1 = int(input("How many players are playing?"))
+
+#for index in range(question1):
+#    players.append(1)
+#print(players)
+
+player_results = []
+player_dict = {1: 0, 2 : 0}
+for player in players:
+    #rolling for a player during one turn
+    for index in range(3):
+        current_roll = random.choice(two_sided_die)
+        player_results.append(current_roll)
+        player_dict[current_roll] += 1
+    
+print(players)
+print(player_results)
+print(player_dict)
+
+#Testing tupled out
+for index in range(3):
+    current_roll = random.choice(two_sided_die)
+    practice_results.append(current_roll)
+    practice_dictionary[current_roll] += 1
+    if practice_results[0] == practice_results[1]:
+        print("The first two rolls are the same")
+
